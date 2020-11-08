@@ -1,10 +1,11 @@
 from pyowm import OWM
-#fbe4f9d1065cee2333cf810e8bdf37ea
+import Units.tools as tools
 
-
-owm = OWM('fbe4f9d1065cee2333cf810e8bdf37ea')
+key = tools.get_setting("owm")
+print(key)
+owm = OWM(key)
 mgr = owm.weather_manager()
-obs = mgr.weather_at_place('Sevenoaks, GB')
+obs = mgr.weather_at_place('London, GB')
 w = obs.weather
 
 w.detailed_status         # 'clouds'
