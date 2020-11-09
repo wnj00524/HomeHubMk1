@@ -1,11 +1,9 @@
 import pyttsx3
 import speech_recognition as sr
 import Units.music as mp
+import Units.weather as wt
 
-
-
-mp.play_anti_flag()
-
+wt.get_weather("Sevenoaks, GB", False)
 
 #settings = numpy.load()
 #engine = pyttsx3.init()
