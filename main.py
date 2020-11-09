@@ -1,6 +1,10 @@
 import pyttsx3
 import speech_recognition as sr
+import Units.music as mp
 
+
+
+mp.play_anti_flag()
 
 
 #settings = numpy.load()
