@@ -4,6 +4,7 @@ import Units.music as mp
 import Units.weather as wt
 
 wt.get_weather("Sevenoaks, GB", False)
+#mp.play_anti_flag()
 
 #settings = numpy.load()
 #engine = pyttsx3.init()

@@ -7,8 +7,9 @@ def get_setting(setting, file):
         file = os.getcwd() + "\\Units\\" + file
     if os.path.isfile(file):
         read_dictionary = np.load(file,allow_pickle='TRUE').item()
-    #print(read_dictionary)
+        #print(read_dictionary)
         got_setting = read_dictionary[setting]
+
     else:
         print(f"{file} not found, {setting} not loaded.")
         got_setting = ""
