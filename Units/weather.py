@@ -14,6 +14,7 @@ class weather():
     clouds = ""
     desc = ""
     time_got = ""
+    hr_time_got = ""
 
 wt = weather()
 
@@ -61,6 +62,7 @@ def load_weather_from_file(fileName):
     #wt.wind_dir = tools.get_setting("win_dir",fileName)
     wt.rain = tools.get_setting("rain",fileName)
     wt.clouds = tools.get_setting("clouds",fileName)
+    wt.hr_time_got = t.asctime(t.localtime(float(wt.time_got)))
 
 
 
@@ -82,11 +84,7 @@ def get_weather(location, say_it):
             w = obs.weather
             save_weather(w, obs.rec_time)
     load_weather_from_file("weather.npy")
-    print(f"The temp is {wt.temp} C")
-    print(f"Time got:{t.asctime(t.localtime(float(wt.time_got)))}")
-    print(f"Wind is {wt.wind_speed} from {wt.wind_dir}")
-    print(f"Rain: {wt.rain}")
-    print(f"Clouds:{wt.clouds}")
+    return wt
 
 
 

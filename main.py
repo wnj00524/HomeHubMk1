@@ -3,7 +3,11 @@ import speech_recognition as sr
 import Units.music as mp
 import Units.weather as wt
 
-wt.get_weather("Sevenoaks, GB", False)
+A = wt.get_weather("London, GB",False)
+print(f"At {A.hr_time_got} temp was {A.temp} C.")
+
+
+
 #mp.play_anti_flag()
 
 #settings = numpy.load()
