@@ -50,7 +50,7 @@ def save_weather(w, rec_time):
     #tools.save_setting("wind_dir",w.wind('deg'),fileN)
     tools.save_setting("rain",w.rain,fileN)
     tools.save_setting("clouds",w.clouds,fileN)
-    #todo 1:Work out what data to be saved.
+
 
 def load_weather_from_file(fileName):
     print("Reading from file....")
@@ -60,13 +60,14 @@ def load_weather_from_file(fileName):
     wt.wind_speed = wind_dict['speed']
     wt.wind_dir = wind_dict['deg']
     #wt.wind_dir = tools.get_setting("win_dir",fileName)
+    #todo work out what rain is returning and use it.
     wt.rain = tools.get_setting("rain",fileName)
     wt.clouds = tools.get_setting("clouds",fileName)
     wt.hr_time_got = t.asctime(t.localtime(float(wt.time_got)))
 
 
 
-def get_weather(location, say_it):
+def get_weather(location):
     key = tools.get_setting("owm","settings.npy")
     owm = OWM(key)
     mgr = owm.weather_manager()
